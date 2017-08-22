@@ -26,18 +26,13 @@ casper.options.viewportSize = {width: 1024, height: 720};
 
 casper.start(start);
 
-// This relies on the specific login from the above, may end up going away in which case you'll have to refigure this out.
+// This relies on the specific login page from the above, may end up going away in which case you'll have to refigure this out.
 casper.then(function(){
 	this.evaluate(function() {
 		document.getElementById("cred_userid_inputtext").value = "ajoo@pkcsecurity.onmicrosoft.com";
 		document.getElementById("cred_password_inputtext").value = "ZtCNoaupUpVqEofoYaekFvh7";
 		document.getElementById("credentials").submit();
 	});
-});
-
-casper.then(function(){
-	this.wait(5000);
-	casper.capture("example.png");
 });
 
 casper.run();

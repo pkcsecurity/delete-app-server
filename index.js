@@ -10,9 +10,10 @@ MS.getCode((err, code, _) => {
 			console.log(err);
 			//return err;
 		}
-		console.log(body)
-		const accessToken = JSON.parse(body).access_token;
-		
+		console.log(body);
+		const tokens = JSON.parse(body);
+		const accessToken = tokens.access_token;
+		const refreshToken = tokens.refresh_token;
 		MS.getDeviceList(accessToken, (err, _, body) => {
 			if (err !== undefined) {
 				console.log(err);
