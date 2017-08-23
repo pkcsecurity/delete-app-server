@@ -1,0 +1,8 @@
+run "node index.js" to retire the first device on the list
+
+it runs functions located in src/index.js to get authorization and such with Alex Joo's login
+code in src/casperjs is a casperjs script, not nodejs, which logs in and gets an auth code
+
+secret key, tenant, and app id are created by app registration, all other code won't work if you
+register the app in the azure portal, you have to use their new registration site and use a 
+non converged app. There's a pretty good chance it changes and everything is ruined
